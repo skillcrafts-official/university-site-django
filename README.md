@@ -18,3 +18,19 @@ pip freeze > requirements.txt
 `
 git config --global --add safe.directory E:/repositories/django/university-site-django/university-site-django
 `
+
+Создание проекта django
+`
+django-admin startproject universitysite .
+`
+
+Подготовка settings.py
+`
+sed -i "s/ALLOWED_HOSTS = \[\]/ALLOWED_HOSTS = [\n    'temp',\n]/" universitysite/settings.py
+sed -i "s/'temp'/'127.0.0.1', 'localhost'/" universitysite/settings.py
+`
+
+Создание приложений (шаблон)
+`
+python manage.py startapp MyApp
+`
