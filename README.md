@@ -26,8 +26,15 @@ django-admin startproject universitysite .
 
 Подготовка settings.py
 ```
+# установка хостов по умолчанию
 sed -i "s/ALLOWED_HOSTS = \[\]/ALLOWED_HOSTS = [\n    'temp',\n]/" universitysite/settings.py
 sed -i "s/'temp'/'127.0.0.1', 'localhost'/" universitysite/settings.py
+```
+```
+# добавление приложения для дебаггинга
+sed -i "s/INSTALLED_APPS = \[/INSTALLED_APPS = [\n    'debug_toolbar',/" universitysite/settings.py
+sed -i "s/MIDDLEWARE = \[/MIDDLEWARE = [\n    'debug_toolbar.middleware.DebugToolbarMiddleware',/" universitysite/settings.py
+echo -e "\n# Django Debug Toolbar\nINTERNAL_IPS = ['127.0.0.1']" >> settings.py
 ```
 
 Создание приложений (шаблон)
