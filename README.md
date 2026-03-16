@@ -14,7 +14,7 @@ pip install django django-extensions django-debug-toolbar
 pip freeze > requirements.txt
 `
 
-Активация отслеживания git
+Активация отслеживания git (мой репозиторий находится на внешнем диске)
 `
-git init
+git config --global --add safe.directory E:/repositories/django/university-site-django/university-site-django
 `
